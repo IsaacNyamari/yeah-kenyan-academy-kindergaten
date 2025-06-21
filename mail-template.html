@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-+0n0xVW2eSR5O3z4z5a5a5a5a5a5a5a5a5a5a5a5a" crossorigin="anonymous">
+    <title>Hello {name}</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            max-width: 500px;
+            margin: 40px auto;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            border: none;
+            background: #fff;
+        }
+        .card-header {
+            background: #090033;
+            color: #fff;
+            font-size: 1.25rem;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .card-title {
+            color: #dedeff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .card-text {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+        .card-footer {
+            background: #f1f5f9;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card shadow">
+            <!-- add a logo on the header -->
+            <div class="card-header">
+                <img src="./image.png" alt="Logo" class="img-fluid" style="max-height: 50px;">
+                {subject}
+            </div>
+            <div class="card-body text-center py-4">
+                <h4 class="card-title mb-3" style="color: #090033; font-size: 1.5rem;">
+                    {title}
+                </h4>
+                <p class="card-text" style="color: #333; font-size: 1.12rem; line-height: 1.7;">
+                    {message}
+                </p>
+                <hr style="border-top: 1px solid #e0e7ff; margin: 2rem 0;">
+
+               <!-- regards -->
+               <p class="card-text" style="color: #333; font-size: 1.12rem; line-height: 1.7;">
+                   Regards,<br>
+                   The Yeah Kenyan Academy Team
+               </p>
+            </div>
+            <div class="card-footer text-muted">&copy; {year} Yeah Kenyan Academy</div>
+        </div>
+    </div>
+</body>
+
+</html>
