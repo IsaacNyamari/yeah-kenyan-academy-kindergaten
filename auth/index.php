@@ -41,14 +41,14 @@
                 </div>
                 <ul class="nav flex-column sideBar mt-2">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Dashboard</a>
+                        <a class="nav-link" href="#">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i> My Progress</a>
+                        <a class="nav-link" href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i> My Progress</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Time-table</a>
+                        <a class="nav-link" href="#"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Time-table</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Me</a>
@@ -73,7 +73,17 @@
             </div>
         </div>
     </div>
-
+<script>
+    // code to activate the sidebar links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(item => {
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+</script>
 </body>
 
 </html>

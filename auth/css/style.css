@@ -22,11 +22,15 @@
 
 .sideBar a:hover {
     color: white !important;
-    background-color: green;
+    background-color: #E71E25;
+    border-bottom: 2px solid #ffffff;
 
 }
 .nav-link{
     color: white !important;
     font-size: 1.2rem;
     font-weight: 500;
+}
+.active {
+    background-color: green !important;
 }
