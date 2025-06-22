@@ -37,7 +37,7 @@
         <div class="row" style="height: 100vh;">
             <div class="col-sm-2  bg-dark text-white">
                 <div class="logo">
-                    <img src="../image.png" alt="Logo" class="img-fluid logo">
+                    <img src="../image.png" alt="Logo" class="img-fluid logo mx-auto d-block mb-2 mt-2">
                 </div>
                 <ul class="nav flex-column sideBar mt-2">
                     <li class="nav-item">
