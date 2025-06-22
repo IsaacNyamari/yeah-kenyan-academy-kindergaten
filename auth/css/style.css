@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "handlee", cursive;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+.sideBar {
+    color: white !important;
+}
+
+.sideBar a {
+    color: white !important;
+    border-bottom: 2px solid green;
+    transition: all 0.3s ease-in-out;
+}
+
+.sideBar a:hover {
+    color: white !important;
+    background-color: green;
+
+}
