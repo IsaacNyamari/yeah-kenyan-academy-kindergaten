@@ -49,34 +49,29 @@
                     </div>
                 </div>
                 <div class="col-lg-5 mb-5">
-                    <p>Labore sea amet kasd diam justo amet ut vero justo. Ipsum ut et kasd duo sit, ipsum sea et erat est dolore, magna ipsum et magna elitr. Accusam accusam lorem magna, eos et sed eirmod dolor est eirmod eirmod amet.</p>
+                    <p>
+                        <strong>Y K A</strong><br>
+                        Working to bring significant changes in online-based learning by doing extensive research for course curriculum preparation, student engagements, and looking forward to the flexible education!
+                    </p>
                     <div class="d-flex">
-                        <i class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <i class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-primary rounded-circle" style="width: 45px; height: 45px;"></i>
                         <div class="pl-3">
                             <h5>Address</h5>
-                            <p>123 Street, New York, USA</p>
+                            <p>Utawala, Nairobi Kenya</p>
                         </div>
                     </div>
                     <div class="d-flex">
-                        <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-primary rounded-circle" style="width: 45px; height: 45px;"></i>
                         <div class="pl-3">
                             <h5>Email</h5>
-                            <p>info@example.com</p>
+                            <p>info@learn.yeahkenyan.com</p>
                         </div>
                     </div>
                     <div class="d-flex">
-                        <i class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <i class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-primary rounded-circle" style="width: 45px; height: 45px;"></i>
                         <div class="pl-3">
                             <h5>Phone</h5>
-                            <p>+012 345 67890</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <i class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Opening Hours</h5>
-                            <strong>Sunday - Friday:</strong>
-                            <p class="m-0">08:00 AM - 05:00 PM </p>
+                            <p>+254728432784</p>
                         </div>
                     </div>
                 </div>
