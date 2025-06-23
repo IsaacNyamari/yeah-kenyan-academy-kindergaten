@@ -16,9 +16,11 @@
         <li class="nav-item">
             <a class="nav-link" title="me" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span class="menu-name">Me</span></a>
         </li>
+       <?php if($role === "admin"){ ?>
         <li class="nav-item">
             <a class="nav-link" title="settings" href="#"><i class="fa fa-tools" aria-hidden="true"></i> <span class="menu-name">Settings</span></a>
         </li>
+       <?php }?>
         <li class="nav-item">
             <a class="nav-link" title="exit" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> <span class="menu-name">Exit</span></a>
         </li>
