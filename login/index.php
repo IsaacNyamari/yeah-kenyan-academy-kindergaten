@@ -48,8 +48,10 @@
                     email: email.value,
                     password: password.value
                 })
-            }).then(res => res.text()).then(data => {
-                window.location.href = "../auth/"
+            }).then(res => res.json()).then(data => {
+                console.log(data);
+                
+                // window.location.href = "../auth/"
             }).catch(error => {
                 console.log(error);
             })

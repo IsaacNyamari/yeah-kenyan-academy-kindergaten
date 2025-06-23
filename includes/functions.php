@@ -60,3 +60,42 @@ class Mailer extends PHPMailer
         return true;
     }
 }
+class User extends Dbh
+{
+    public function viewUsers($user_id = null, $table)
+    {
+        $conn = $this->connect();
+        $sql = "SELECT * from `$table`";
+        $stmt = mysqli_prepare($conn, $sql);
+        if (mysqli_stmt_execute($stmt)) {
+            $result = mysqli_stmt_get_result($stmt);
+            if (mysqli_num_rows($result) > 0) {
+                $user_details = mysqli_fetch_all($result, 1);
+                return $user_details;
+            }
+        }
+    }
+    public function timeTables()
+    {
+        $conn = $this->connect();
+        $sql = "SELECT * from `time-tables`";
+        $stmt = mysqli_prepare($conn, $sql);
+        if (mysqli_stmt_execute($stmt)) {
+            $result = mysqli_stmt_get_result($stmt);
+            if (mysqli_num_rows($result) > 0) {
+                $time_tables_details = mysqli_fetch_all($result, 1);
+                return $time_tables_details;
+            }
+        }
+    }
+}
+
+
+$timetable = json_encode(
+    [
+        "class" => "form 1",
+        "subject" => "Mathematics",
+        "time" => "08:00- 09:00",
+        "teacher"=>"Isaac Nyamari"
+    ]
+);

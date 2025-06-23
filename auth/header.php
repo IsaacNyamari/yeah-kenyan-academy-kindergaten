@@ -6,6 +6,17 @@ if (!empty($_SESSION)) {
     $fname = $_SESSION['fname'];
     $role = $_SESSION['role'];
 }
+require "../includes/functions.php";
+$view = new User();
+$view_student_result = $view->viewUsers(null,"students");
+$view_time_table_result = $view->timeTables();
+foreach($view_time_table_result as $timeTable){
+   $monday = json_decode($timeTable["monday"],true);
+   $tuesday = json_decode($timeTable["tuesday"],true);
+   $wednesday = json_decode($timeTable["wednesday"],true);
+   $thursday = json_decode($timeTable["thursday"],true);
+   $friday = json_decode($timeTable["friday"],true);
+}
 ?>
 
 <head>

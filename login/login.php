@@ -18,6 +18,7 @@ class Login extends Dbh
             if (password_verify($password, $user['password'])) {
                 session_start();
                 $_SESSION['role'] = "teacher";
+                $_SESSION['user_id'] = $user['teacher_id'];
                 $_SESSION['fname'] = $user['fname'];
                 $_SESSION['lname'] = $user['lname'];
                 $_SESSION['email'] = $user['email'];
@@ -26,7 +27,7 @@ class Login extends Dbh
                 echo json_encode([
                     "status" => "Success",
                     "message" => "Logged in successfully as a $role!",
-                    "role" => "$role"
+                    "role" => $role
                 ]);
             } else {
                 echo json_encode([
@@ -46,6 +47,7 @@ class Login extends Dbh
                 $user = mysqli_fetch_assoc($result);
                 $_SESSION['role'] = "admin";
                 $_SESSION['fname'] = $user['fname'];
+                $_SESSION['user_id'] = $user['admin_id'];
                 $_SESSION['lname'] = $user['lname'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['logged_in'] = true;
@@ -53,7 +55,7 @@ class Login extends Dbh
                 echo json_encode([
                     "status" => "Success",
                     "message" => "Logged in successfully as a $role!",
-                    "role" => "$role"
+                    "role" => $role
                 ]);
                 exit();
             } else {
@@ -68,13 +70,14 @@ class Login extends Dbh
                     $user = mysqli_fetch_assoc($result);
                     $_SESSION['role'] = "student";
                     $_SESSION['fname'] = $user['fname'];
+                    $_SESSION['user_id'] = $user['student_id'];
                     $_SESSION['lname'] = $user['lname'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['logged_in'] = true;
                     echo json_encode([
                         "status" => "Success",
                         "message" => "Logged in successfully as a $role!",
-                        "role" => "$role"
+                        "role" => $role
                     ]);
                     exit();
                 }
