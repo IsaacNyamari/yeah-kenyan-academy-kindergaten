@@ -60,7 +60,3 @@ class Mailer extends PHPMailer
         return true;
     }
 }
-// send sample email
-
-// git config --global user.name "Isaac Nyamari"
-//  git config --global user.email "jablessions@egmail.com"
