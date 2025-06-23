@@ -21,7 +21,7 @@ class Login extends Dbh
                 $_SESSION['fname'] = $user['fname'];
                 $_SESSION['lname'] = $user['lname'];
                 $_SESSION['email'] = $user['email'];
-                $_SESSION['teacher'] = true;
+                $_SESSION['logged_in'] = true;
                 $role = $_SESSION['role'];
                 echo json_encode([
                     "status" => "Success",
@@ -48,7 +48,7 @@ class Login extends Dbh
                 $_SESSION['fname'] = $user['fname'];
                 $_SESSION['lname'] = $user['lname'];
                 $_SESSION['email'] = $user['email'];
-                $_SESSION['admin'] = true;
+                $_SESSION['logged_in'] = true;
                 $role = $_SESSION['role'];
                 echo json_encode([
                     "status" => "Success",
@@ -70,7 +70,7 @@ class Login extends Dbh
                     $_SESSION['fname'] = $user['fname'];
                     $_SESSION['lname'] = $user['lname'];
                     $_SESSION['email'] = $user['email'];
-                    $_SESSION['student'] = true;
+                    $_SESSION['logged_in'] = true;
                     echo json_encode([
                         "status" => "Success",
                         "message" => "Logged in successfully as a $role!",

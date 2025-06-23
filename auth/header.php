@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
+require "protect.php";
 if (!empty($_SESSION)) {
     $fname = $_SESSION['fname'];
+    $role = $_SESSION['role'];
 }
 ?>
 

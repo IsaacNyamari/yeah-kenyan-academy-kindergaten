@@ -1,3 +1,5 @@
+</div>
+</div>
 <div class="tourToggler">
     <div class="tourStartBtn" id="tourStartBtn">
         <p><i class="fa fa-play"></i> Guide</p>
