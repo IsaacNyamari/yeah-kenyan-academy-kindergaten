@@ -42,11 +42,34 @@
     justify-content: center !important;
     text-align: center;
 }
+
 .custom-tooltip {
     text-align: center;
     font-size: 14px;
     max-width: 90vw;
     word-wrap: break-word;
+}
+
+.tourToggler {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006828;
+    text-align: center;
+    color: #ffffff;
+    padding: 12px;
+    width: 80px;
+    height: 80px;
+    padding-bottom: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tourStartBtn {
+    margin: auto;
 }
 
 @media (max-width:576px) {
@@ -66,9 +89,11 @@
         display: flex !important;
         width: fit-content !important;
     }
-.nav-link i{
-    font-size: 22px;
-}
+
+    .nav-link i {
+        font-size: 22px;
+    }
+
     .sideBar {
         justify-content: center;
         align-content: center;
@@ -81,8 +106,14 @@
         border: none !important;
     }
 
+
     .main-content {
         height: fit-content !important;
+    }
+
+    .dataDiv {
+        border-radius: 0 0 300px 300px !important;
+        height: 20vh;
     }
 
     .nav-app-container {
@@ -109,5 +140,5 @@
     .nav-item {
         list-style-type: none;
     }
-    
+
 }
