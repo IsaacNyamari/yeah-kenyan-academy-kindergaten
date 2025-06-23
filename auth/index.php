@@ -2,7 +2,8 @@
 <html lang="en">
 <?php
 session_start();
-$fname = $_SESSION['fname'];
+if(!empty($_SESSION)){
+$fname = $_SESSION['fname'];}
 ?>
 
 <head>
@@ -69,7 +70,7 @@ $fname = $_SESSION['fname'];
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 ml-0 bg-dark dataDiv text-white">
-                            <h1 class="text-center mt-2">Welcome to the Dashboard <?php echo $fname ? $fname : "" ?>!</h1>
+                            <h1 class="text-center mt-2">Welcome to the Dashboard <?php echo $fname ??"" ?>!</h1>
                         </div>
                     </div>
                 </div>
