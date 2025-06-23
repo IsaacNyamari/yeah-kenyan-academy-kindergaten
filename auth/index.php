@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+$fname = $_SESSION['fname'];
+?>
 
 <head>
     <meta charset="utf-8">
@@ -65,7 +69,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 ml-0 bg-dark dataDiv text-white">
-                            <h1 class="text-center mt-2">Welcome to the Dashboard</h1>
+                            <h1 class="text-center mt-2">Welcome to the Dashboard <?php echo $fname ? $fname : "" ?>!</h1>
                         </div>
                     </div>
                 </div>
@@ -73,9 +77,11 @@
         </div>
     </div>
 
-<div class="tourToggler">
-    <div class="tourStartBtn" id="tourStartBtn"><p><i class="fa fa-play"></i> Guide</p></div>
-</div>
+    <div class="tourToggler">
+        <div class="tourStartBtn" id="tourStartBtn">
+            <p><i class="fa fa-play"></i> Guide</p>
+        </div>
+    </div>
     <script src="./tour.js"> </script>
 </body>
 

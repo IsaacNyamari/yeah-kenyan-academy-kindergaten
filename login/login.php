@@ -1,5 +1,7 @@
 <?php
 require "../includes/functions.php";
+$data = file_get_contents("php://input");
+$postedData = json_decode($data, true);
 
 class Login extends Dbh
 {
@@ -20,10 +22,16 @@ class Login extends Dbh
                 $_SESSION['lname'] = $user['lname'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['teacher'] = true;
-            }else{
+                $role = $_SESSION['role'];
                 echo json_encode([
-                    "status"=>"Error",
-                    "message"=>"wrong email or password!"
+                    "status" => "Success",
+                    "message" => "Logged in successfully as a $role!",
+                    "role" => "$role"
+                ]);
+            } else {
+                echo json_encode([
+                    "status" => "Error",
+                    "message" => "wrong email or password!"
                 ]);
             }
             exit();
@@ -34,8 +42,18 @@ class Login extends Dbh
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if (mysqli_num_rows($result) > 0) {
+                session_start();
+                $user = mysqli_fetch_assoc($result);
+                $_SESSION['role'] = "admin";
+                $_SESSION['fname'] = $user['fname'];
+                $_SESSION['lname'] = $user['lname'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['admin'] = true;
+                $role = $_SESSION['role'];
                 echo json_encode([
-                    "status" => "admin logged in"
+                    "status" => "Success",
+                    "message" => "Logged in successfully as a $role!",
+                    "role" => "$role"
                 ]);
                 exit();
             } else {
@@ -45,8 +63,18 @@ class Login extends Dbh
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 if (mysqli_num_rows($result) > 0) {
+                    session_start();
+                    $role = $_SESSION['role'];
+                    $user = mysqli_fetch_assoc($result);
+                    $_SESSION['role'] = "student";
+                    $_SESSION['fname'] = $user['fname'];
+                    $_SESSION['lname'] = $user['lname'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['student'] = true;
                     echo json_encode([
-                        "status" => "student logged in"
+                        "status" => "Success",
+                        "message" => "Logged in successfully as a $role!",
+                        "role" => "$role"
                     ]);
                     exit();
                 }
@@ -54,8 +82,9 @@ class Login extends Dbh
         }
     }
 }
-
-// $login = new Login();
-// echo $loginUser = $login->loginUser("jablessions76@gmail.com", "123");
-$data = file_get_contents("php://input");
-echo $data;
+if (isset($postedData)) {
+    $email = $postedData['email'];
+    $password = $postedData['password'];
+    $userlogin = new Login();
+    echo $userlogin->loginUser($email, $password);
+}
