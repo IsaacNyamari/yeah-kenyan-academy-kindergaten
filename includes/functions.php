@@ -13,15 +13,13 @@ class Dbh
 
     protected function connect()
     {
-        $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbname;
-        $pdo = new PDO($dsn, $this->user, $this->pass);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        return $pdo;
+        $conn = mysqli_connect($this->host, $this->user, $this->pass, $this->dbname);
+        return $conn;
     }
 }
 class Mailer extends PHPMailer
 {
-    public function sendMail($request=null, $to,$name = null, $subject,$email = null, $body=null, $otp = null, $code = null)
+    public function sendMail($request = null, $to, $name = null, $subject, $email = null, $body = null, $otp = null, $code = null)
     {
         $this->isSMTP();
         $this->Host = 'mail.yeahkenyan.com'; // Set the SMTP server to send through
@@ -36,8 +34,8 @@ class Mailer extends PHPMailer
         $this->Debugoutput = 'html'; // Output format for debugging
 
         $mailTemplate = file_get_contents('../mail-template.html');
-        $mailTemplate = str_replace('{subject}', $subject. " - " . $name, $mailTemplate);
-        $mailTemplate = str_replace('{message}', "Email: ".$email. "\n\n".$body, $mailTemplate);
+        $mailTemplate = str_replace('{subject}', $subject . " - " . $name, $mailTemplate);
+        $mailTemplate = str_replace('{message}', "Email: " . $email . "\n\n" . $body, $mailTemplate);
         $mailTemplate = str_replace('{title}', 'Contact Form Submission', $mailTemplate);
         $mailTemplate = str_replace('{year}', date('Y'), $mailTemplate);
 
@@ -54,7 +52,7 @@ class Mailer extends PHPMailer
         if (!$this->send()) {
             error_log('Mailer Error: ' . $this->ErrorInfo);
             return false;
-        }else{
+        } else {
             // Log successful email sending
             echo json_encode(["message" => "Hello $name. Email sent successfully to " . "Yeah Kenyan Academy"]);
         }
